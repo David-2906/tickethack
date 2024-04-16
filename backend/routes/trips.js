@@ -8,8 +8,8 @@ const Trip = require("../models/trips")
 // const { checkBody } = require("../modules/checkBody") 
 
 // Rechercher un nouveau trajet dans départ et arrivé 
-router.get("/trips/:departure/:arrival", (req, res) => {
-    Trip.findOne({
+router.get("/:departure/:arrival", (req, res) => {
+    Trip.find({
       departure: { $regex: new RegExp(req.params.departure, "i") },
       arrival: { $regex: new RegExp(req.params.arrival, "i") },
     }).then(data => {
@@ -20,5 +20,12 @@ router.get("/trips/:departure/:arrival", (req, res) => {
       }
     })
   });
+
+  // Afficher la liste des trips
+  router.get('/', (req, res) => {
+	Trip.find().then(data => {
+		res.json({ data });
+	});
+});
 
 module.exports = router
