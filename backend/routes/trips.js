@@ -8,10 +8,14 @@ const Trip = require("../models/trips")
 // const { checkBody } = require("../modules/checkBody") 
 
 // Rechercher un nouveau trajet dans départ et arrivé 
-router.get("/:departure/:arrival", (req, res) => {
+router.get("/:departure/:arrival/:date", (req, res) => {
+const moment = require('moment');
+const formattedDate = moment(req.params.date).format('YYYY-MM-DD');
+
     Trip.find({
       departure: { $regex: new RegExp(req.params.departure, "i") },
       arrival: { $regex: new RegExp(req.params.arrival, "i") },
+      date: formattedDate, 
     }).then(data => {
       if (data) {
         res.json({ result: true, Trip: data });
