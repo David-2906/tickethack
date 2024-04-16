@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+
+#header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#buttonHome{
+    text-decoration: none;
+    font-size: 26px;
+    color: rgb(80, 173, 148);
+    font-weight: 800;
+    margin-left: 25px;
+}
+
+#nav{
+    display: flex;
+}
+
+#cart {
+    padding: 0 25px;
+}
+
+#bookings {
+    padding: 0 25px
+}
+
+#main {
+    background-image: url('./images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
