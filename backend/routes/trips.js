@@ -11,11 +11,14 @@ const Trip = require("../models/trips")
 router.get("/:departure/:arrival/:date", (req, res) => {
 const moment = require('moment');
 const formattedDate = moment(req.params.date).format('YYYY-MM-DD');
+const startdate = `${formattedDate}T00:00:00.000`;
+const endDate = `${formattedDate}T23:59:59.999`;
+
 
     Trip.find({
       departure: { $regex: new RegExp(req.params.departure, "i") },
       arrival: { $regex: new RegExp(req.params.arrival, "i") },
-      date: formattedDate, 
+      date: { $gte: startdate, $lte: endDate } 
     }).then(data => {
       if (data) {
         res.json({ result: true, Trip: data });
