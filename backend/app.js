@@ -13,26 +13,24 @@ var app = express()
 
 const cors = require("cors") 
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    const allowedOrigins = [
-      "http://localhost:4000",
-      "http://localhost:4001",
-      "https://www.tablee.app",
-      "http://192.168.0.35:4000",
-      "http://192.168.0.35:4001"
-    ];
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-};
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     const allowedOrigins = [
+//       "http://localhost:3000",
+//       "http://localhost:3001",
+//       "http://localhost:5500"
+//     ];
+//     if (allowedOrigins.includes(origin) || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+// };
 
-app.use(cors(corsOptions))
+app.use(cors())
 
 app.use(logger("dev"))
 app.use(express.json())
