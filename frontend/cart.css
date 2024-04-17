@@ -18,11 +18,43 @@ body {
 
 #nav{
     display: flex;
+}
 
-}#cart {
+#cart {
     padding: 0 25px;
+}
+
+#buttonCart {
+    text-decoration: none; 
 }
 
 #bookings {
     padding: 0 25px
+}
+
+#main {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: #F1F4F3;
+    height: 100vh;
+}
+
+#Container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 30%;
+    width: 70%;
+    border: 3px solid white;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+#text {
+    text-align: center;
+    color: black;
 }
