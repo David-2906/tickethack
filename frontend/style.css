@@ -96,6 +96,13 @@ input {
     color: black;
     text-align: center;
     font-size: large;
+    overflow: scroll;
+}
+
+#listTrip{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #trainImg {
@@ -106,4 +113,12 @@ input {
 
 hr {
     color: rgb(80, 173, 148)
+}
+
+.bookButton {
+    background-color: rgb(80, 173, 148);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
 }
