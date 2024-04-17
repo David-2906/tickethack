@@ -16,6 +16,10 @@ body {
     margin-left: 25px;
 }
 
+#buttonCart {
+    text-decoration: none; 
+}
+
 #nav{
     display: flex;
 }
@@ -48,7 +52,6 @@ body {
     width: 100vw;
     height: 70%;
     margin-top: 20px;
-    border: 3px solid white;
 }
 
 #tripChoice {

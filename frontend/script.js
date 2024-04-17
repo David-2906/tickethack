@@ -19,12 +19,34 @@ document.querySelector('#searchButton').addEventListener('click', function() {
         for(let trip of myTrip){
             document.querySelector('#tripList').innerHTML += `
             <div id="listTrip">
-            <p>${trip.departure} > ${trip.arrival} ${trip.date.match(pattern)[0]} ${trip.price} € </p>
+            <p id="infoTrip">${trip.departure} > ${trip.arrival} ${trip.date.match(pattern)[0]} ${trip.price} € </p>
             <button class="bookButton">Book</button>
             </div>`
         }
-    }
+        // On recupere le trip choisi pour l'afficher dans le cart
+        const allButtons = document.querySelectorAll(".bookButton");
+        for ( let oneButton of allButtons){
+       oneButton.addEventListener('click', function () {
+            fetch(`http://localhost:3000/trips/cart`, {
+                method: 'POST',
+                headers: {'Content-Type': "application/json"},
+                body: JSON.stringify({
+                    departure: departure,
+                    arrival: arrival,
+                    date: date
+                })
+            })
+
+        }).then(response => response.json())
+        .then(data => {
+            document.querySelector('#Container').innerHTML += `
+            <p>${data.departure}</p>`
+        })
+    }}
     })
 
 })
+
+
+
 

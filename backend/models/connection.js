@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const connectionString = "mongodb+srv://leabonnenfant:SRRPssEsZfa813no@cluster0.uj3rgmm.mongodb.net/tickethack"
+const connectionString =process.env.DB_CONNECTION_STRING
 mongoose.set("strictQuery", true)
 
 mongoose
