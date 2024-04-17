@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+#header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#buttonHome{
+    text-decoration: none;
+    font-size: 26px;
+    color: rgb(80, 173, 148);
+    font-weight: 800;
+    margin-left: 25px;
+}
+
+#nav{
+    display: flex;
+
+}#cart {
+    padding: 0 25px;
+}
+
+#bookings {
+    padding: 0 25px
+}
